@@ -1,81 +1,70 @@
-# ReactJS News Challenge
+# Getting Started with Create React App
 
-## Briefing
-Good day ladies and gentle men, my name is <b>Chris(a random angmo)</b> and I am looking for the best developers in Singapore. I have just had a chat with your instructional team and they have assured me I am in good hands with your team. I want to be sure you are who your instructors say you are so I have this full day task to test your skills, design and logic skills.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is your mission should you choose to accept:
+## Available Scripts
 
-Your task is to develop a news website using the news api that allows users to read the news. Your target audiences are people in Africa, Asia, Europe and of course America.
+In the project directory, you can run:
 
-1. The site home should display headline news
-1. The site to display on the home page news based on categories.i.e. sports, covid news, politics...
-1. The user should be able to navigate and read news from these 4 continents from the navigation bar.
-1. Since our users are in France, Nigeria & Singapore have sections to read news specifically from these countries.
-1. Design is important, this is a frontend developer role. Ugly sites are no more in vogue.
+### `npm start`
 
-Team .... dont fail me now....<br/>
-I will see you on the other side.<br/>
-![](https://www.esquireme.com/public/styles/full_img/public/images/2018/07/29/tom-cruise-mission-impossible.jpg?itok=i721IM7X)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Get Started
-1. Fork and clone this repository
-1. Follow instructions below
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Instructions
-1. Create a new react app `npx create-react-app newagency`
-1. Add Bootstrap if needed 
-1. You can install all (bootstrap, axios, react-bootstrap )in one line `npm install bootstrap react-bootstrap axios`
-1. Register an account on [News Api Site](http://newsapi.org/) to get api key
-1. Your mission starts now!!
+### `npm test`
 
-## API links
-1. [News Api Site](http://newsapi.org/)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Helper
-1. If you encounter one of the errors below, you must be trying to setState in an unmounted component. This is where `componentWillUnmount` come in. You can either use `axios.cancelToken` or set a condition to only set state if component is mounted. I have left links as to what to do in the References.
+### `npm run build`
 
-<details>
-  <summary> Memory Leak useEffect </summary>
-     let cancelToken: any = axios.CancelToken;
-     let source = cancelToken.source();
- 
-      useEffect(() => {
-          (async () => {
-            try {
-            const data = await axios.get("https://", {
-                cancelToken: source.token
-            });
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-          }catch (error) {
-            if (axios.isCancel(error)) {
-              console.log('Request canceled', error.message);
-            } else {
-              // handle error
-              console.log(error);
-            }
-          }
-    })();
-    return () => {
-      //when the component unmounts
-      console.log("component unmounted");
-      // cancel the request (the message parameter is optional)
-      source.cancel('Operation canceled by the user.');
-    }
-    }, []); //End UseEffect
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-  </details>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-![](https://user-images.githubusercontent.com/14989804/45530190-7551e680-b7b7-11e8-9da0-09340db83c62.png)
-![](https://i.stack.imgur.com/5idib.jpg)
+### `npm run eject`
 
-## Sample Designs
-![](https://bootstrap.news/wp-content/uploads/2019/07/bootstrap-4-news-portal-magazine-template-1024x768.jpg)
-![](https://focusoncode.com/wp-content/uploads/2018/07/avision-free-template.jpg)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## References
-1. [Axios Cancel Token](https://github.com/axios/axios#cancellation)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Team
-1. Ebere Iweala
-1. Tristan Calleja 
-1. Siu Sing Lai
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
